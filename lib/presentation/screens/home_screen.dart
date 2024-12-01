@@ -12,7 +12,4 @@ class HomeScreen extends StatelessWidget {
           GoRouter.of(context).go('/add');  
         },  
         child: Icon(Icons.add),  
-      ),  
-    );  
-  }  
-}  
+      ), 
