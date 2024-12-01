@@ -22,4 +22,4 @@ class VisitorRepository {
   Future<void> deleteVisitor(String id) async {  
     await _firestore.collection('VISITANTE').doc(id).delete();  
   }  
-}
+}  

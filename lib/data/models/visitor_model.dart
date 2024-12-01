@@ -1,14 +1,14 @@
 class Visitor {  
-  final String id;  
-  final String name;  
-  final String identification;  
-  final String visitReason;  
-  final String visitedPerson;  
-  final DateTime entryTime;  
-  final DateTime exitTime;  
-  final String transportMode;  
-  final String companions;  
-  final String photoUrl;  
+  String id;  
+  String name;  
+  String identification;  
+  String visitReason;  
+  String visitedPerson;  
+  DateTime entryTime;  
+  DateTime exitTime;  
+  String transport;  
+  String companions;  
+  String photoUrl;  
 
   Visitor({  
     required this.id,  
@@ -18,7 +18,7 @@ class Visitor {
     required this.visitedPerson,  
     required this.entryTime,  
     required this.exitTime,  
-    required this.transportMode,  
+    required this.transport,  
     required this.companions,  
     required this.photoUrl,  
   });  
@@ -31,13 +31,13 @@ class Visitor {
       'visitedPerson': visitedPerson,  
       'entryTime': entryTime.toIso8601String(),  
       'exitTime': exitTime.toIso8601String(),  
-      'transportMode': transportMode,  
+      'transport': transport,  
       'companions': companions,  
       'photoUrl': photoUrl,  
     };  
   }  
 
-  factory Visitor.fromMap(String id, Map<String, dynamic> map) {  
+  static Visitor fromMap(String id, Map<String, dynamic> map) {  
     return Visitor(  
       id: id,  
       name: map['name'],  
@@ -46,7 +46,7 @@ class Visitor {
       visitedPerson: map['visitedPerson'],  
       entryTime: DateTime.parse(map['entryTime']),  
       exitTime: DateTime.parse(map['exitTime']),  
-      transportMode: map['transportMode'],  
+      transport: map['transport'],  
       companions: map['companions'],  
       photoUrl: map['photoUrl'],  
     );  
